@@ -25,6 +25,10 @@ public class Aluno {
 
   private String nome;
 
+  private String sobreNome;
+
+  private Integer idade;
+
   @Column(unique = true)
   private String cpf;
 
@@ -32,7 +36,7 @@ public class Aluno {
 
   private LocalDate dataDeNascimento;
 
-  @OneToMany(mappedBy = "aluno", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
   @JsonIgnore
   private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
 
